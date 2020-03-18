@@ -1,0 +1,23 @@
+schema {
+    subscription: Subscription
+    mutation: Mutation
+    query: Query
+}
+
+type Query {
+    ping: String!
+}
+
+type Subscription {
+    onMessage: MessageEvent!
+}
+
+type Mutation {
+    sendMessage(msg: String!): MessageEvent!
+}
+
+type MessageEvent {
+    id: ID!
+    msg: String!
+    createdAt: String!
+}
